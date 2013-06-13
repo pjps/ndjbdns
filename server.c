@@ -292,7 +292,8 @@ main (int argc, char *argv[])
         iop[n].events = IOPAUSE_READ;
 
         n++;
-        i += l + 1;
+        i += l;
+        if(x[i] == ',') i++;
     }
 
     droproot ();
