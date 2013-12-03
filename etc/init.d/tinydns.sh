@@ -27,6 +27,8 @@ prog=PREFIX/sbin/tinydns
 config=/etc/ndjbdns/tinydns.conf
 logfile=/var/log/tinydns.log
 lockfile=/var/lock/subsys/tinydns
+pidfile=/var/run/tinydns.pid
+port=53
 
 [ -e /etc/sysconfig/$prog ] && . /etc/sysconfig/$prog
 
@@ -34,7 +36,7 @@ start() {
     [ -x $prog ] || exit 5
     [ -f $config ] || exit 6
     echo -n $"Starting ${prog##[a-z/.]*/}: "
-    daemon $prog -D 2>> $logfile
+    daemon --pidfile="$pidfile" $prog -c $config -l $logfile -p $pidfile -w $port -D 2>> $logfile
     RETVAL=$?
     echo
     [ $RETVAL -eq 0 ] && touch $lockfile
@@ -43,7 +45,7 @@ start() {
 
 stop() {
     echo -n $"Stopping ${prog##[a-z/.]*/}: "
-    killproc $prog
+    killproc -p "$pidfile" $prog
     RETVAL=$?
     echo
     [ $RETVAL -eq 0 ] && rm -f $lockfile
@@ -64,7 +66,7 @@ force_reload() {
 }
 
 rh_status() {
-    status $prog
+    status -p "$pidfile" $prog
 }
 
 rh_status_q() {

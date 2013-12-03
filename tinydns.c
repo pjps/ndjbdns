@@ -28,19 +28,22 @@
 #define CFGFILE SYSCONFDIR"/ndjbdns/tinydns.conf"
 
 extern short mode;
+extern char pidfile[4096];
+extern char logfile[4096];
+extern char cfgfile[4096];
 static char seed[128];
 
 void
 initialize (void)
 {
-    read_conf (CFGFILE);
+    read_conf (cfgfile);
 
     if (mode & DAEMON)
     {
         /* redirect stdout & stderr to a log file */
-        redirect_to_log (LOGFILE);
+        redirect_to_log (logfile);
 
-        write_pid (PIDFILE);
+        write_pid (pidfile);
     }
 
     dns_random_init (seed);
