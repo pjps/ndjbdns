@@ -55,6 +55,7 @@ extern int respond (char *, char *, char *);
 
 static char ip[4];
 static uint16 port;
+uint16 server_port = 53;
 
 static int len;
 static char *q;
@@ -62,6 +63,7 @@ static char buf[1024];
 
 static char *prog = NULL;
 short mode = 0, debug_level = 0;
+char cfgfile[4096], logfile[4096], pidfile[4096];
 
 void
 usage (void)
@@ -75,6 +77,10 @@ printh (void)
     usage ();
     printf ("\n Options: \n");
     printf ("%-17s %s\n", "   -d <value>", "print debug messages");
+    printf ("%-17s %s\n", "   -c <value>", "full path to config file");
+    printf ("%-17s %s\n", "   -l <value>", "full path to log file");
+    printf ("%-17s %s\n", "   -p <value>", "full path to pid file");
+    printf ("%-17s %s\n", "   -w <value>", "UDP port for server listening. Default: 53");
     printf ("%-17s %s\n", "   -D", "run as daemon");
     printf ("%-17s %s\n", "   -h --help", "print this help");
     printf ("%-17s %s\n", "   -v --version", "print version information");
@@ -85,7 +91,7 @@ int
 check_option (int argc, char *argv[])
 {
     int n = 0, ind = 0;
-    const char optstr[] = "+:d:Dhv";
+    const char optstr[] = "+:d:c:l:p:w:Dhv";
     struct option lopt[] = \
     {
         { "help", no_argument, NULL, 'h' },
@@ -107,19 +113,39 @@ check_option (int argc, char *argv[])
             mode |= DAEMON;
             break;
 
+        case 'c':
+            strcpy(cfgfile, optarg);
+            break;
+
+        case 'l':
+            strcpy(logfile, optarg);
+            break;
+
+        case 'p':
+            strcpy(pidfile, optarg);
+            break;
+
+        case 'w':
+            server_port = atoi(optarg);
+            break;
+
         case 'h':
             printh ();
             exit (0);
+            break;
 
         case 'v':
             printf ("%s version %s\n", prog, VERSION);
             exit (0);
+            break;
 
         case ':':
             errx (-1, "option `%c' takes an argument, see: --help", optopt);
+            break;
 
         default:
             errx (-1, "unknown option `%c', see: --help", optopt);
+            break;
         }
     }
 
@@ -285,7 +311,7 @@ main (int argc, char *argv[])
         udp53[n] = socket_udp();
         if (udp53[n] == -1)
             errx (-1, "could not open UDP socket");
-        if (socket_bind4_reuse (udp53[n], ip, 53) == -1)
+        if (socket_bind4_reuse (udp53[n], ip, server_port) == -1)
             errx (-1, "could not bind UDP socket");
 
         ndelay_off (udp53[n]);
