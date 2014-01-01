@@ -1,10 +1,7 @@
-#ifndef DIRENTRY_H
-#define DIRENTRY_H
+#pragma once 
 
 /* sysdep: +dirent */
 
 #include <sys/types.h>
 #include <dirent.h>
 #define direntry struct dirent
-
-#endif

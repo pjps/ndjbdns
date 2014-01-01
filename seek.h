@@ -1,5 +1,4 @@
-#ifndef SEEK_H
-#define SEEK_H
+#pragma once 
 
 typedef unsigned long seek_pos;
 
@@ -11,5 +10,3 @@ extern int seek_end(int);
 extern int seek_trunc(int,seek_pos);
 
 #define seek_begin(fd) (seek_set((fd),(seek_pos) 0))
-
-#endif

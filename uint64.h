@@ -1,8 +1,5 @@
-#ifndef UINT64_H
-#define UINT64_H
+#pragma once 
 
 /* sysdep: -ulong64 */
 
 typedef unsigned long long uint64;
-
-#endif

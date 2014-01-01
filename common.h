@@ -20,8 +20,7 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
-#ifndef COMMON_H
-#define COMMON_H
+#pragma once 
 
 #include "uint32.h"
 
@@ -52,5 +51,3 @@ extern void write_pid (const char *);
 extern void handle_term (int);
 
 extern void set_timezone (void);
-
-#endif

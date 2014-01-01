@@ -1,6 +1,3 @@
-#ifndef DROPROOT_H
-#define DROPROOT_H
+#pragma once 
 
 extern void droproot (void);
-
-#endif

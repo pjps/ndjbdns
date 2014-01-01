@@ -1,5 +1,4 @@
-#ifndef RESPONSE_H
-#define RESPONSE_H
+#pragma once 
 
 #include "uint32.h"
 
@@ -23,5 +22,3 @@ extern void response_rfinish(int);
 #define RESPONSE_ADDITIONAL 10
 
 extern int response_cname(const char *,const char *,uint32);
-
-#endif

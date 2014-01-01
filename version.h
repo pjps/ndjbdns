@@ -19,8 +19,7 @@
  */
 
 
-#ifndef VERSION_H
+#pragma once 
 
 #define VERSION "1.05.9"
 
-#endif

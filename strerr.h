@@ -1,5 +1,4 @@
-#ifndef STRERR_H
-#define STRERR_H
+#pragma once 
 
 struct strerr {
   struct strerr *who;
@@ -74,5 +73,3 @@ strerr_die((e),(x1),(x2),(x3),0,0,0,0)
 strerr_die((e),(x1),(x2),0,0,0,0,0)
 #define strerr_die1x(e,x1) \
 strerr_die((e),(x1),0,0,0,0,0,0)
-
-#endif

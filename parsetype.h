@@ -1,6 +1,3 @@
-#ifndef PARSETYPE_H
-#define PARSETYPE_H
+#pragma once 
 
 extern int parsetype(char *,char *);
-
-#endif

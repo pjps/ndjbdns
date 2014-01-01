@@ -20,8 +20,7 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
-#ifndef DNS_H
-#define DNS_H
+#pragma once 
 
 #include "taia.h"
 #include "clients.h"
@@ -110,5 +109,3 @@ extern int dns_mx(stralloc *,const stralloc *);
 extern int dns_resolvconfrewrite(stralloc *);
 extern int dns_ip4_qualify_rules(stralloc *,stralloc *,const stralloc *,const stralloc *);
 extern int dns_ip4_qualify(stralloc *,stralloc *,const stralloc *);
-
-#endif

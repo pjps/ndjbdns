@@ -1,6 +1,3 @@
-#ifndef TIMEOUTWRITE_H
-#define TIMEOUTWRITE_H
+#pragma once 
 
 extern int timeoutwrite();
-
-#endif

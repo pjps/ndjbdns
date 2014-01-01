@@ -1,5 +1,4 @@
-#ifndef BUFFER_H
-#define BUFFER_H
+#pragma once 
 
 typedef struct buffer
 {
@@ -57,5 +56,3 @@ extern buffer *buffer_0small;
 extern buffer *buffer_1;
 extern buffer *buffer_1small;
 extern buffer *buffer_2;
-
-#endif

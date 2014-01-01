@@ -1,5 +1,4 @@
-#ifndef SELECT_H
-#define SELECT_H
+#pragma once 
 
 /* sysdep: +sysselect */
 
@@ -7,5 +6,3 @@
 #include <sys/time.h>
 #include <sys/select.h>
 extern int select();
-
-#endif

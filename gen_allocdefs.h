@@ -1,5 +1,4 @@
-#ifndef GEN_ALLOC_DEFS_H
-#define GEN_ALLOC_DEFS_H
+#pragma once 
 
 #define GEN_ALLOC_ready(ta,type,field,len,a,i,n,x,base,ta_ready) \
 int ta_ready(register ta *x, register unsigned int n) \
@@ -40,5 +39,3 @@ int ta_rplus(register ta *x,register unsigned int n) \
 #define GEN_ALLOC_append(ta,type,field,len,a,i,n,x,base,ta_rplus,ta_append) \
 int ta_append(register ta *x,register const type *i) \
 { if (!ta_rplus(x,1)) return 0; x->field[x->len++] = *i; return 1; }
-
-#endif

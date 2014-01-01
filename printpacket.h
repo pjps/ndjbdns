@@ -1,8 +1,5 @@
-#ifndef PRINTPACKET_H
-#define PRINTPACKET_H
+#pragma once 
 
 #include "stralloc.h"
 
 extern unsigned int printpacket_cat(stralloc *,char *,unsigned int);
-
-#endif

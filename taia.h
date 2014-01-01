@@ -1,5 +1,4 @@
-#ifndef TAIA_H
-#define TAIA_H
+#pragma once 
 
 #include "tai.h"
 
@@ -30,5 +29,3 @@ extern void taia_unpack(const char *,struct taia *);
 extern unsigned int taia_fmtfrac(char *,const struct taia *);
 
 extern void taia_uint(struct taia *,unsigned int);
-
-#endif

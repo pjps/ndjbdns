@@ -20,8 +20,7 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
-#ifndef LOG_H
-#define LOG_H
+#pragma once 
 
 #include "uint64.h"
 
@@ -75,5 +74,3 @@ extern void log_rrsoa(const char *, const char *, const char *,
                         const char *, const char *, unsigned int);
 
 extern void log_stats(int, int, uint64, uint64);
-
-#endif
