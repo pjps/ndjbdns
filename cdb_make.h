@@ -20,8 +20,7 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
-#ifndef CDB_MAKE_H
-#define CDB_MAKE_H
+#pragma once 
 
 #include "buffer.h"
 #include "uint32.h"
@@ -67,5 +66,3 @@ extern int cdb_make_add (struct cdb_make *, const char *,
                                     unsigned int, const char *, unsigned int);
 
 extern int cdb_make_finish (struct cdb_make *);
-
-#endif

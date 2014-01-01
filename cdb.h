@@ -20,8 +20,7 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
-#ifndef CDB_H
-#define CDB_H
+#pragma once 
 
 #include "uint32.h"
 
@@ -59,5 +58,3 @@ extern int cdb_find (struct cdb *, const char *, unsigned int);
 #define cdb_datapos(c)      ((c)->dpos)
 #define cdb_datalen(c)      ((c)->dlen)
 #define cdb_findstart(c)    ((c)->loop = 0)
-
-#endif

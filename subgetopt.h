@@ -1,5 +1,4 @@
-#ifndef SUBGETOPT_H
-#define SUBGETOPT_H
+#pragma once 
 
 #ifndef SUBGETOPTNOSHORT
 #define sgopt subgetopt
@@ -20,5 +19,3 @@ extern int subgetoptpos;
 extern int subgetoptproblem;
 extern char *subgetoptprogname;
 extern int subgetoptdone;
-
-#endif

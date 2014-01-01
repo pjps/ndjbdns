@@ -1,5 +1,4 @@
-#ifndef QUERY_H
-#define QUERY_H
+#pragma once 
 
 #include "dns.h"
 #include "uint32.h"
@@ -31,5 +30,3 @@ extern void query_io (struct query *, iopause_fd *, struct taia *);
 extern int query_get (struct query *, iopause_fd *, struct taia *);
 
 extern int query_start (struct query *, char *, char *, char *, char *);
-
-#endif

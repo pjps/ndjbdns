@@ -1,8 +1,5 @@
-#ifndef OPENREADCLOSE_H
-#define OPENREADCLOSE_H
+#pragma once 
 
 #include "stralloc.h"
 
 extern int openreadclose(const char *,stralloc *,unsigned int);
-
-#endif

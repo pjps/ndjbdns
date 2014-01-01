@@ -1,6 +1,3 @@
-#ifndef AUTO_HOME_H
-#define AUTO_HOME_H
+#pragma once 
 
 extern const char auto_home[];
-
-#endif

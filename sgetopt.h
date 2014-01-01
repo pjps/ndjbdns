@@ -1,5 +1,4 @@
-#ifndef SGETOPT_H
-#define SGETOPT_H
+#pragma once 
 
 #ifndef SGETOPTNOSHORT
 #define getopt sgetoptmine
@@ -17,5 +16,3 @@
 extern int sgetoptmine(int,char **,const char *);
 extern int sgetopterr;
 extern const char *sgetoptprogname;
-
-#endif

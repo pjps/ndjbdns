@@ -1,5 +1,4 @@
-#ifndef BYTE_H
-#define BYTE_H
+#pragma once 
 
 extern unsigned int byte_chr();
 extern unsigned int byte_rchr();
@@ -9,5 +8,3 @@ extern int byte_diff();
 extern void byte_zero();
 
 #define byte_equal(s,n,t) (!byte_diff((s),(n),(t)))
-
-#endif

@@ -20,8 +20,7 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
-#ifndef SOCKET_H
-#define SOCKET_H
+#pragma once 
 
 #include "uint16.h"
 
@@ -50,4 +49,3 @@ extern int socket_connect4 (int, const char *, uint16);
 extern int socket_recv4 (int, char *, int, char *, uint16 *, void *);
 
 extern int socket_send4 (int, char *, int, const char *, uint16, void *);
-#endif

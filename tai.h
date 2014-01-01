@@ -1,5 +1,4 @@
-#ifndef TAI_H
-#define TAI_H
+#pragma once 
 
 #include "uint64.h"
 
@@ -22,5 +21,3 @@ extern void tai_pack(char *,const struct tai *);
 extern void tai_unpack(const char *,struct tai *);
 
 extern void tai_uint(struct tai *,unsigned int);
-
-#endif

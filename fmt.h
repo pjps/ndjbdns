@@ -1,5 +1,4 @@
-#ifndef FMT_H
-#define FMT_H
+#pragma once 
 
 #define FMT_ULONG 40 /* enough space to hold 2^128 - 1 in decimal, plus \0 */
 #define FMT_LEN ((char *) 0) /* convenient abbreviation */
@@ -21,5 +20,3 @@ extern unsigned int fmt_0x(char *,int);
 
 extern unsigned int fmt_str(char *,const char *);
 extern unsigned int fmt_strn(char *,const char *,unsigned int);
-
-#endif

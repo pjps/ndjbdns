@@ -1,5 +1,4 @@
-#ifndef GENERIC_CONF_H
-#define GENERIC_CONF_H
+#pragma once 
 
 #include "buffer.h"
 
@@ -16,5 +15,3 @@ extern void finish(void);
 extern void perm(int);
 extern void owner(int,int);
 extern void makelog(const char *,int,int);
-
-#endif

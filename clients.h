@@ -1,7 +1,4 @@
-#ifndef CLIENTS_H
-#define CLIENTS_H
+#pragma once 
 
 #define MAXTCP 20
 #define MAXUDP 200
-
-#endif /* CLIENTS_H */

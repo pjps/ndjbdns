@@ -20,8 +20,7 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
-#ifndef ERROR_H
-#define ERROR_H
+#pragma once 
 
 #if defined (linux) || defined (__linux)
     #include <errno.h>
@@ -51,5 +50,3 @@ extern int error_blockedbydbl;
 extern int error_temp (int);
 
 extern const char *error_str (int);
-
-#endif

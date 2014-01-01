@@ -1,5 +1,4 @@
-#ifndef SCAN_H
-#define SCAN_H
+#pragma once 
 
 extern unsigned int scan_uint(const char *,unsigned int *);
 extern unsigned int scan_xint(const char *,unsigned int *);
@@ -24,5 +23,3 @@ extern unsigned int scan_memcmp(const char *,const char *,unsigned int);
 
 extern unsigned int scan_long(const char *,long *);
 extern unsigned int scan_8long(const char *,unsigned long *);
-
-#endif

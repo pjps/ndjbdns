@@ -1,5 +1,4 @@
-#ifndef IOPAUSE_H
-#define IOPAUSE_H
+#pragma once 
 
 /* sysdep: +poll */
 #define IOPAUSE_POLL
@@ -14,5 +13,3 @@ typedef struct pollfd iopause_fd;
 #include "taia.h"
 
 extern void iopause(iopause_fd *,unsigned int,struct taia *,struct taia *);
-
-#endif

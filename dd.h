@@ -1,6 +1,3 @@
-#ifndef DD_H
-#define DD_H
+#pragma once 
 
 extern int dd(const char *,const char *,char *);
-
-#endif

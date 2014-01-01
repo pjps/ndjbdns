@@ -1,5 +1,4 @@
-#ifndef STRALLOC_H
-#define STRALLOC_H
+#pragma once 
 
 #include "gen_alloc.h"
 
@@ -25,5 +24,3 @@ extern int stralloc_catlong0(stralloc *,long,unsigned int);
 #define stralloc_catuint0(sa,i,n) (stralloc_catulong0((sa),(i),(n)))
 #define stralloc_catint0(sa,i,n) (stralloc_catlong0((sa),(i),(n)))
 #define stralloc_catint(sa,i) (stralloc_catlong0((sa),(i),0))
-
-#endif

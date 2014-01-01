@@ -1,6 +1,3 @@
-#ifndef OKCLIENT_H
-#define OKCLIENT_H
+#pragma once 
 
 extern int okclient(char *);
-
-#endif
