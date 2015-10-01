@@ -82,6 +82,16 @@ unsigned int printrecord_cat(stralloc *out,const char *buf,unsigned int len,unsi
       if (!stralloc_catulong0(out,ch,0)) return 0;
     }
   }
+  else if (byte_equal(misc,2,DNS_T_AAAA)) {
+    if (datalen != 16) { errno = error_proto; return 0; }
+    if (!stralloc_cats(out," AAAA ")) return 0;
+    pos = dns_packet_copy(buf,len,pos,misc,16); if (!pos) return 0;
+    for (i = 0;i < 16; ++i) {
+      ch = misc[i];
+      if (i && (i % 2 == 0)) if (!stralloc_cats(out,":")) return 0;
+      if (!stralloc_catulong_ashex0(out,ch,2)) return 0;
+    }
+  }
   else {
     if (!stralloc_cats(out," ")) return 0;
     uint16_unpack_big(misc,&u16);
