@@ -32,7 +32,9 @@ Once installed, on Linux machines add `dnscache' to the system services by follo
 Now you can start the service by
 
     sh># service dnscached start
+
 OR
+
     sh># dnscache -D
 
 Consult the dnscache(8) manual page for more help.
@@ -42,6 +44,4 @@ Problems:
 
 If you encounter any problems while installing New-DJBDNS OR find bugs in its working, please send an email to <pj.pandit@yahoo.co.in> describing in detail about the problem/bug.
 
-
-
-          Thank you!
+Thank you!
