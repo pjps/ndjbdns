@@ -188,19 +188,20 @@ mergefree (struct dns_transmit *d)
     if (merge_enable)
         unregister_inprogress (d);
 
-    /* unregister us from our mater */
+    /* unregister us from our master */
     if (d->master)
     {
         for (i = 0; i < d->master->nslaves; i++)
             if (d->master->slaves[i] == d)
                 d->master->slaves[i] = 0;
+        d->master = 0;
     }
 
     /* and unregister all of our slaves from us */
     for (i = 0; i < d->nslaves; i++)
     {
         if (d->slaves[i])
-            d->slaves[i]->master = NULL;
+            d->slaves[i]->master = 0;
     }
 
     d->nslaves = 0;
