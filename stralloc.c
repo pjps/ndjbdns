@@ -110,6 +110,41 @@ stralloc_catlong0 (stralloc *sa, long l, unsigned int n)
 }
 
 int
+stralloc_catulong_ashex0 (stralloc *sa, unsigned long u, unsigned int n)
+{
+    char *s = (char *)0;
+    unsigned long q = 0;
+    unsigned int len = 0;
+
+    q = u;
+    len = 1;
+    while (q > 0xF)
+    {
+        ++len;
+        q /= 0x10;
+    }
+    if (len < n)
+        len = n;
+
+    if (!stralloc_readyplus (sa, len))
+      return 0;
+
+    s = sa->s + sa->len;
+    sa->len += len;
+    while (len)
+    {
+	if ( (u % 0x10) < 10) {
+	    s[--len] = '0' + (u % 0x10);
+	} else {
+	    s[--len] = 'a' + (u % 0x10 - 10);
+	}
+        u /= 0x10;
+    }
+
+    return 1;
+}
+
+int
 stralloc_copyb (stralloc *sa, const char *s, unsigned int n)
 {
     if (!stralloc_ready (sa, n + 1))

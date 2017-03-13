@@ -19,6 +19,7 @@ extern int stralloc_starts(stralloc *,const char *);
 
 extern int stralloc_catulong0(stralloc *,unsigned long,unsigned int);
 extern int stralloc_catlong0(stralloc *,long,unsigned int);
+extern int stralloc_catulong_ashex0(stralloc *,unsigned long,unsigned int);
 
 #define stralloc_catlong(sa,l) (stralloc_catlong0((sa),(l),0))
 #define stralloc_catuint0(sa,i,n) (stralloc_catulong0((sa),(i),(n)))
