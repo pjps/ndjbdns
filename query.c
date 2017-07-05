@@ -275,7 +275,7 @@ doit (struct query *z, int state)
 
 
 NEWNAME:
-    if (++z->loop == 100)
+    if (++z->loop == QUERY_MAXLOOP)
         goto DIE;
     d = z->name[z->level];
     dtype = z->level ? DNS_T_A : z->type;
@@ -695,7 +695,7 @@ LOWERLEVEL:
 
 
 HAVEPACKET:
-    if (++z->loop == 100)
+    if (++z->loop == QUERY_MAXLOOP)
         goto DIE;
     buf = z->dt.packet;
     len = z->dt.packetlen;

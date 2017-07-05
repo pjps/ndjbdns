@@ -6,6 +6,7 @@
 #define QUERY_MAXNS 16
 #define QUERY_MAXLEVEL 5
 #define QUERY_MAXALIAS 16
+#define QUERY_MAXLOOP 1000
 
 struct query
 {
