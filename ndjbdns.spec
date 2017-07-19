@@ -189,7 +189,7 @@ fi
 %endif
 
 %files
-%doc README COPYING ChangeLog
+%doc README.md COPYING ChangeLog
 
 %{_sbindir}/axfrdns
 %{_sbindir}/dnscache

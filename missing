@@ -191,7 +191,7 @@ give_advice ()
       ;;
     *)
       echo "You might have modified some files without having the proper"
-      echo "tools for further handling them.  Check the 'README' file, it"
+      echo "tools for further handling them.  Check the 'README.md' file, it"
       echo "often tells you about the needed prerequisites for installing"
       echo "this package.  You may also peek at any GNU archive site, in"
       echo "case some other package contains this missing '$1' program."
