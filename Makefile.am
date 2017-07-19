@@ -38,7 +38,7 @@ nodist_man1_MANS = dnsip.1 dnsq.1 dnsfilter.1 djbdns.1 tinydns-data.1 \
 	randomip.1 dnstrace.1 axfr-get.1 dnsname.1 rbldns-data.1
 
 CLEANFILES = $(bin_SCRIPTS) $(nodist_man1_MANS) $(nodist_man8_MANS)
-EXTRA_DIST = dnstracesort.sh readme.ms README INSTALL TODO ChangeLog \
+EXTRA_DIST = dnstracesort.sh readme.ms README.md INSTALL TODO ChangeLog \
 	COPYING $(noinst_MANS) ndjbdns.logrotate
 
 axfrdns_SOURCES = axfrdns.c iopause.c droproot.c tdlookup.c response.c \
